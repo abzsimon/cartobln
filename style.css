@@ -142,3 +142,15 @@ footer {
 }
 
 /* map-show */
+
+#map {
+    height:89%;
+    border: 1px solid red;
+    margin : 2px;
+}
+
+#controls {
+    height:9%;
+    border: 1px solid red;
+    margin : 2px;
+}
