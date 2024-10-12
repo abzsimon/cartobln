@@ -42,6 +42,7 @@ function guides (src,p) {
 async function generatePoints() {
   const response = await fetch("data.json");
   const data = await response.json ();
+  console.log(data[17].guide_bio[0])
   for (let e of data) {
     let popupContent = `
             <p style="color:darksalmon; font-weight:bolder";>${e.name}</p>
@@ -61,7 +62,6 @@ async function generatePoints() {
         multivaluedItems(e.is_now, '#isNow')
         document.querySelector("#description").innerHTML = e.place_desc
         document.querySelector("#street").innerHTML = e.place_pic
-        console.log(guides(e.guide_pic, e.guide_bio))
     });
   }
 }
