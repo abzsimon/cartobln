@@ -24,6 +24,20 @@ function multivaluedItems (item, position) {
     }
 }
 
+function guides (src,p) {
+    let liSrc = src.split(",");
+    let liP = p.split(",");
+    for (let i = 0; i < liSrc.length; i++) {
+        let newTag = document.createElement('div');
+        newTag.setAttribute('class', 'guide');
+        newTag.innerHTML = `
+            <img src="${liSrc[i]}"/>
+            <div class="guide-bio">${liP[i]}</div>
+        `;
+        document.querySelector('#guides').appendChild(newTag);
+    }   
+}
+
 // fetch le json en asynchrone, seule solution qui marche côté js client mais avec async + facile (conseil de Victor)
 async function generatePoints() {
   const response = await fetch("data.json");
@@ -38,12 +52,16 @@ async function generatePoints() {
     marker.on("click", function () {
         document.querySelector('#keywords').innerHTML = ''
         document.querySelector('#communities').innerHTML = ''
-        console.log(e, marker.getLatLng());
-        document.querySelector("#description").innerHTML = e.place_desc
-        document.querySelector("#street").innerHTML = e.place_pic
-        // document.querySelector("#communities").innerHTML = e.keywords
+        document.querySelector('#timeline').innerHTML = ''
+        document.querySelector('#isNow').innerHTML = ''
+        document.querySelector('#guides').innerHTML = ''
         multivaluedItems(e.keywords, '#keywords')
         multivaluedItems(e.community, '#communities')
+        multivaluedItems(e.timeline, '#timeline')
+        multivaluedItems(e.is_now, '#isNow')
+        document.querySelector("#description").innerHTML = e.place_desc
+        document.querySelector("#street").innerHTML = e.place_pic
+        console.log(guides(e.guide_pic, e.guide_bio))
     });
   }
 }

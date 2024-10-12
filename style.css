@@ -99,48 +99,51 @@ a {
   height: 99vh;
   width: 99vw;
   display: grid;
-  grid-template-rows: repeat(12, 1fr);
+  grid-template-rows: repeat(24, 1fr);
   grid-template-columns: repeat(12, 1fr);
   /* border: 2px dashed black; */
 }
 
 header {
   grid-row-start: 1;
-  grid-row-end: 2;
+  grid-row-end: 4;
   grid-column-start: 1;
   grid-column-end: 13;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin-bottom:0.5em;
 }
 
 #map-show {
-  grid-row-start: 2;
-  grid-row-end: 12;
+  grid-row-start: 4;
+  grid-row-end: 24;
   grid-column-start: 1;
   grid-column-end: 6;
   background-color: #f1f5f9;
 }
 
 #point-features {
-  grid-row-start: 2;
-  grid-row-end: 12;
+  grid-row-start: 4;
+  grid-row-end: 24;
   grid-column-start: 6;
   grid-column-end: 13;
   display: grid;
   grid-template-rows: repeat(12, 1fr);
   grid-template-columns: repeat(12, 1fr);
+  margin-left:0.5em;
 }
 
 footer {
-  grid-row-start: 12;
-  grid-row-end: 13;
+  grid-row-start: 24;
+  grid-row-end: 25;
   grid-column-start: 1;
   grid-column-end: 13;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: darkgoldenrod;
+  justify-content:left;
+  align-items:end;
+  font-size:small;
+  margin-left:1em;
 }
 
 /* sous-éléments */
@@ -219,7 +222,7 @@ footer {
 
 #map {
   height: 100%;
-  border-radius: 2em;
+  border-radius: 1em;
 }
 
 /* point-features - grid 12x12, contient street, map desc et guides */
@@ -240,10 +243,10 @@ footer {
   grid-column-start: 6;
   grid-column-end: 13;
   /* border: 1px blue solid; */
-  margin: 2px;
+  margin-left:0.5em;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 #guides {
@@ -262,13 +265,14 @@ footer {
 /* map-desc, contient description, keywords, communities, timeline */
 
 #description {
-  border: 1px blue solid;
+  /* border: 1px blue solid; */
   height: 59%;
   width: 100%;
+  font-size:small;
 }
 
 #keywords {
-  border: 1px blue solid;
+  /* border: 1px blue solid; */
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -284,7 +288,7 @@ footer {
 }
 
 #communities {
-  border: 1px blue solid;
+  /* border: 1px blue solid; */
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -301,15 +305,46 @@ footer {
 }
 
 #timeline {
-  border: 1px blue solid;
-  height: 4%;
+  /* border: 1px blue solid; */
+  display: flex;
+  flex-wrap: wrap;
   width: 100%;
 }
 
+#other {
+  height: 7%;
+  display: flex;
+}
+
+#timeline .tag {
+    font-size: small;
+    /* margin: 0.3em 0.2em 0.3em 0.1em;
+    padding: 0.1em 0.5em; */
+}
+
 #isNow {
-  border: 1px blue solid;
-  height: 4%;
+  /* border: 1px blue solid; */
   width: 100%;
+  display:flex; 
+}
+
+#isNow .tag {
+    font-size: small;
+    /* margin: 0em 0.2em 0em 0.1em;
+    padding: 0.1em 0.5em; */
+}
+
+.tag {
+    height: 1.5em;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    color:darkgrey;
+    font-weight: 500;
+    padding-left: 0.2em;
 }
 
 iframe {
@@ -327,4 +362,14 @@ iframe {
   border: yellowgreen solid 2px;
   height: 60%;
   width: 100%;
+}
+
+footer p {
+    border-top: grey solid 1px;
+    color:grey;
+    font-style:italic;
+}
+
+footer a {
+    text-decoration: none;
 }
