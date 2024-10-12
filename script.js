@@ -25,14 +25,12 @@ function multivaluedItems (item, position) {
 }
 
 function guides (src,p) {
-    let liSrc = src.split(",");
-    let liP = p.split(",");
-    for (let i = 0; i < liSrc.length; i++) {
+    for (let i = 0; i < src.length; i++) {
         let newTag = document.createElement('div');
         newTag.setAttribute('class', 'guide');
         newTag.innerHTML = `
-            <img src="${liSrc[i]}"/>
-            <div class="guide-bio">${liP[i]}</div>
+            <img src="${src[i]}"/>
+            <div class="guide-bio">${p[i]}</div>
         `;
         document.querySelector('#guides').appendChild(newTag);
     }   
@@ -62,6 +60,7 @@ async function generatePoints() {
         multivaluedItems(e.is_now, '#isNow')
         document.querySelector("#description").innerHTML = e.place_desc
         document.querySelector("#street").innerHTML = e.place_pic
+        guides(e.guide_pic,e.guide_bio)
     });
   }
 }

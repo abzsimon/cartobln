@@ -222,25 +222,26 @@ footer {
 
 #map {
   height: 100%;
-  border-radius: 1em;
+  border-radius: 10px 10px 10px 10px;
+  margin-left:0.4em;
 }
 
 /* point-features - grid 12x12, contient street, map desc et guides */
 
 #street {
   grid-row-start: 1;
-  grid-row-end: 9;
+  grid-row-end: 8;
   grid-column-start: 1;
-  grid-column-end: 6;
-  border: 1px blue solid;
-  margin: 2px;
+  grid-column-end: 7;
+  /* border: 1px blue solid; */
+  margin-bottom:0.7em;
   overflow: hidden;
 }
 
 #map-desc {
   grid-row-start: 1;
   grid-row-end: 13;
-  grid-column-start: 6;
+  grid-column-start: 7;
   grid-column-end: 13;
   /* border: 1px blue solid; */
   margin-left:0.5em;
@@ -250,16 +251,16 @@ footer {
 }
 
 #guides {
-  grid-row-start: 9;
+  grid-row-start: 8;
   grid-row-end: 13;
   grid-column-start: 1;
-  grid-column-end: 6;
-  border: 1px blue solid;
+  grid-column-end: 7;
+  /* border: 1px blue solid; */
+  border-top: darksalmon solid 1px;
   padding: 0.5em;
-  margin: 2px;
-  dispay: flex;
-  flex-direction: row;
-  justify-content: center;
+  display: flex;
+  flex-direction:row;
+  justify-content:center;
 }
 
 /* map-desc, contient description, keywords, communities, timeline */
@@ -268,7 +269,7 @@ footer {
   /* border: 1px blue solid; */
   height: 59%;
   width: 100%;
-  font-size:small;
+  font-size:normal;
 }
 
 #keywords {
@@ -279,7 +280,7 @@ footer {
 }
 
 #keywords .tag {
-  font-size: small;
+  font-size: normal;
   color: white;
   background-color: darksalmon;
   border-radius: 1em;
@@ -295,7 +296,7 @@ footer {
 }
 
 #communities .tag {
-  font-size: small;
+  font-size: normal;
   border: solid 1px darksalmon;
   color: darksalmon;
   background-color: white;
@@ -307,6 +308,7 @@ footer {
 #timeline {
   /* border: 1px blue solid; */
   display: flex;
+  justify-content: start;
   flex-wrap: wrap;
   width: 100%;
 }
@@ -317,7 +319,8 @@ footer {
 }
 
 #timeline .tag {
-    font-size: small;
+    font-size: normal;
+    margin-right:1em;
     /* margin: 0.3em 0.2em 0.3em 0.1em;
     padding: 0.1em 0.5em; */
 }
@@ -329,9 +332,7 @@ footer {
 }
 
 #isNow .tag {
-    font-size: small;
-    /* margin: 0em 0.2em 0em 0.1em;
-    padding: 0.1em 0.5em; */
+    font-size: normal;
 }
 
 .tag {
@@ -350,18 +351,30 @@ h2 {
 iframe {
   width: 100%;
   height: 100%;
+  border-radius: 10px 10px 10px 10px;
+}
+
+/* Guides */
+
+.guide {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:0.2em 0.5em;
+    max-width: 60%;
 }
 
 .guide img {
-  border: yellowgreen solid 2px;
-  height: 40%;
-  width: 100%;
+  /* border: yellowgreen solid 2px; */
+  height: 5em;
+  margin-bottom:0.5em;
+  border-radius:10px 10px 10px 10px;
 }
 
-#guide-bio {
-  border: yellowgreen solid 2px;
-  height: 60%;
-  width: 100%;
+.guide-bio {
+  font-size: normal;
+  overflow: hidden;
+  word-wrap: break-word;
 }
 
 footer p {
