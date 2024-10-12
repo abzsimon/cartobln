@@ -1,85 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <!-- feuille de style leaflet https://leafletjs.com/examples/quick-start/ -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-    crossorigin=""/>
-</head>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+  </head>
 
-<body>
+  <body>
     <div id="container">
-        <!-- en-tête  -->
-        <header>
-
-            <div id="title">
-                <h1>Die Berliner Aidskrise. 13-18 Mai 2024, March Bloch Institut, Berlin</h1>
-                <h2>Ein topographisches und historisches Workshop</h2>
-            </div>
-            <div id="ext-links">
-                <div class="link"><a href="">Access raw table</a></div>
-                <div class="link"><a href="">Project Git Hub</a></div>
-            </div>
-            <div id="lang">
-                <div class="link">
-                    <a href="http://">EN</a></div>
-                <div class="link">
-                    <a href="http://">FR</a></div>
-                <div class="link">
-                    <a href="http://">DE</a></div>
-
-            </div>
-
-        </header>
-
-        <!-- corps -->
-    
-        <div id="map-show">
-            <div id="map">
-            </div>
-            <div id="controls">
-                <button id="prec">Précédent</button>
-                <button id="prec">Suivant</button>
-            </div>
-
+      <!-- en-tête  -->
+      <header>
+        <div id="title">
+          <h1>
+            Die Berliner Aidskrise. 13-18 Mai 2024, March Bloch Institut, Berlin
+          </h1>
+          <h2>Ein topographisches und historisches Workshop</h2>
         </div>
+        <div id="ext-links">
+          <div class="link"><a href="">download json data</a></div>
+          <div class="link"><a href="">github</a></div>
+        </div>
+        <div id="lang">
+          <div class="link">
+            <a href="http://">EN</a>
+          </div>
+          <div class="link">
+            <a href="http://">FR</a>
+          </div>
+          <div class="link">
+            <a href="http://">DE</a>
+          </div>
+        </div>
+      </header>
+
+      <!-- corps -->
+
+      <div id="map-show">
+        <div id="map"></div>
+      </div>
+
+      <div id="point-features">
+        <div id="street"></div>
         <div id="map-desc">
-            <div id="place">
-                <div id="street"></div>
-                <div id="communities"></div>
-                <div id="description"></div>
-                <div id="isNow"></div>
-            </div>
-            <div id="guides">
-                <div class="guide">
-                    <img src="" alt="">
-                    <div id="guide-bio"></div>
-                </div>
-                <div class="guide">
-                    <img src="" alt="">
-                    <div id="guide-bio"></div>
-                </div>
-            </div>
-
+          <div id="description"></div>
+          <div id="keywords"></div>
+          <div id="communities"></div>
+          <div id="timeline"></div>
+          <div id="isNow"></div>
         </div>
+        <div id="guides">
+          <div class="guide">
+            <img src="" alt="" />
+            <div id="guide-bio"></div>
+          </div>
+          <div class="guide">
+            <img src="" alt="" />
+            <div id="guide-bio"></div>
+          </div>
+        </div>
+      </div>
 
-
-        <!-- pied de page -->
-        <footer>
-
-        </footer>
-
+      <!-- pied de page -->
+      <footer></footer>
     </div>
-</body>
+  </body>
 
-<!-- script leaflet à mettre après css leaflet https://leafletjs.com/examples/quick-start/  -->
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-crossorigin=""></script>
-<script src="script.js"></script>
-
+  <!-- script leaflet à mettre après css leaflet https://leafletjs.com/examples/quick-start/  -->
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+  <script src="script.js"></script>
 </html>

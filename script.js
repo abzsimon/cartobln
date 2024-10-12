@@ -14,8 +14,15 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 
 // DATA
 
-//fonctions pour générer contenus latéraux gauche
-
+function multivaluedItems (item, position) {
+    let toLi = item.split(",")
+    for (e of toLi) {
+        let newTag = document.createElement('div')
+        newTag.setAttribute('class', 'tag')
+        newTag.textContent = e;
+        document.querySelector(position).appendChild(newTag)
+    }
+}
 
 // fetch le json en asynchrone, seule solution qui marche côté js client mais avec async + facile (conseil de Victor)
 async function generatePoints() {
@@ -29,8 +36,14 @@ async function generatePoints() {
     let marker = L.marker(e.loc).addTo(map);
     marker.bindPopup(popupContent).openPopup();
     marker.on("click", function () {
+        document.querySelector('#keywords').innerHTML = ''
+        document.querySelector('#communities').innerHTML = ''
         console.log(e, marker.getLatLng());
-        // marker.bindPopup("This is Paris!").openPopup(); // Open a popup on click
+        document.querySelector("#description").innerHTML = e.place_desc
+        document.querySelector("#street").innerHTML = e.place_pic
+        // document.querySelector("#communities").innerHTML = e.keywords
+        multivaluedItems(e.keywords, '#keywords')
+        multivaluedItems(e.community, '#communities')
     });
   }
 }
